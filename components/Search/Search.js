@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Search, SearchIconWrapper, StyledInputBase } from "./styled.search";
 import SearchIcon from "@mui/icons-material/Search";
-import { useSearchContext } from "../../context/SearchContext";
+import { useSearchContext } from "../../Context/SearchContext";
 export default function SearchBar({ setShows, data }) {
     const { searchText, inputUpdate } = useSearchContext();
     const timerId = React.useRef(null);
