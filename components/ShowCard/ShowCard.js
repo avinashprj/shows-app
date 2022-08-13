@@ -8,7 +8,6 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function MovieCard({ show }) {
-    console.log(show.image, "TEEE");
     if (show) {
         return (
             <Link href={`/${show.id}`}>

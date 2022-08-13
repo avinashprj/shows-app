@@ -3,7 +3,7 @@ import { Search, SearchIconWrapper, StyledInputBase } from "./styled.search";
 import SearchIcon from "@mui/icons-material/Search";
 import { useInput } from "../../hooks/useInput";
 import { getShowBySearch } from "../../services/service";
-import { useSearchContext } from "../../context/searchContext";
+import { useSearchContext } from "../../context/SearchContext";
 export default function SearchBar({ setShows, data }) {
     const { searchText, inputUpdate } = useSearchContext();
     const timerId = React.useRef(null);
@@ -12,7 +12,6 @@ export default function SearchBar({ setShows, data }) {
         timerId.current = setTimeout(async () => {
             if (searchText) {
                 const searchResults = [];
-                console.log(searchResults);
                 setShows(searchResults);
             }
         }, 200);

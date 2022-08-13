@@ -4,25 +4,22 @@ import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import MovieCard from "../ShowCard/ShowCard";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useSearchContext } from "../../context/searchContext";
+import { useSearchContext } from "../../context/SearchContext";
 import { getShowBySearch } from "../../services/service";
 
 export default function ShowsGrid({ data }) {
     const [index, setIndex] = React.useState(50);
     const [movies, setMovies] = React.useState(data.slice(0, index));
     const [isMore, setIsMore] = React.useState(true);
-    console.log(movies.length);
     const { searchText, inputUpdate, setSearchResults, searchResults } =
         useSearchContext();
-    console.log(searchText);
 
     const fetchMoreData = () => {
         if (movies.length >= 100) {
             setIsMore(false);
             return;
         }
-        // a fake async api call like which sends
-        // 20 more records in .5 secs
+
         setTimeout(() => {
             setIndex((prev) => prev + 30);
             setMovies((prevItem) =>
@@ -30,7 +27,6 @@ export default function ShowsGrid({ data }) {
             );
         }, 500);
     };
-    console.log(searchResults);
     React.useEffect(() => {
         (async () => {
             if (searchText) {
@@ -45,7 +41,6 @@ export default function ShowsGrid({ data }) {
     }, [searchText]);
 
     if (searchText) {
-        console.log("TEEE");
         return (
             <Grid
                 sx={{
