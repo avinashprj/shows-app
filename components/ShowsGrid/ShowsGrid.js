@@ -2,7 +2,7 @@ import * as React from "react";
 import Grid from "@mui/material/Grid";
 import MovieCard from "../ShowCard/ShowCard";
 import InfiniteScroll from "react-infinite-scroll-component";
-import { useSearchContext } from "../../Context/SearchContext";
+import { useSearchContext } from "../../context/SearchContext";
 import { getShowBySearch } from "../../services/service";
 
 export default function ShowsGrid({ data }) {

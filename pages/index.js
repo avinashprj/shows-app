@@ -8,7 +8,7 @@ import VideosGrid from "../components/ShowsGrid/ShowsGrid";
 import { getShows } from "../services/service";
 import { theme } from "../Theme/theme";
 import SearchBar from "../components/Search/Search";
-import { SearchContextProvider } from "../Context/SearchContext";
+import { SearchContextProvider } from "../context/SearchContext";
 
 export default function Home({ data }) {
     const [shows, setShows] = React.useState(() => JSON.parse(data));
